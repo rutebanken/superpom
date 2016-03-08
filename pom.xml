@@ -8,8 +8,8 @@
     <name>superpom</name>
     <description>Super pom for rutebanken</description>
     <scm>
-        <connection>scm:git:ssh://git@bitbucket.org:rutebanken/superpom.git</connection>
-        <developerConnection>scm:git:ssh://git@bitbucket.org:rutebanken/superpom.git</developerConnection>
+        <connection>scm:git:ssh://git@bitbucket.org/rutebanken/superpom.git</connection>
+        <developerConnection>scm:git:ssh://git@bitbucket.org/rutebanken/superpom.git</developerConnection>
     </scm>
 
     <properties>
