@@ -356,7 +356,7 @@
         <repository>
             <id>rutebanken-repository</id>
             <name>Rutebanken Repository</name>
-            <url>scpexe://jump/opt/mavenrepo</url>
+            <url>scpexe://nexus/opt/mavenrepo</url>
         </repository>
     </distributionManagement>
 
