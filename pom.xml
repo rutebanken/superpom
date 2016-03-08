@@ -3,7 +3,7 @@
     <groupId>org.rutebanken.super-pom</groupId>
     <artifactId>superpom</artifactId>
     <packaging>pom</packaging>
-    <version>0.1</version>
+    <version>0.0.1-SNAPSHOT</version>
 
     <name>superpom</name>
     <description>Super pom for rutebanken</description>
