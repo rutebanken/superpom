@@ -22,6 +22,11 @@
         <maven.compiler.plugin.version>3.5.1</maven.compiler.plugin.version>
         <maven.shade.plugin.version>2.4.3</maven.shade.plugin.version>
         <maven.javadoc.plugin.version>2.10.3</maven.javadoc.plugin.version>
+        <!-- seems like 2.7 will induce error in our projects -->
+        <plexus.compiler.javac.version>2.7</plexus.compiler.javac.version>
+
+        <!-- ============= project dependencies to supply default values ========== -->
+        <fabric8.version>2.2.96</fabric8.version>
     </properties>
 
     <profiles>
@@ -52,7 +57,7 @@
         <url>https://rutebanken.atlassian.net</url>
     </issueManagement>
     <prerequisites>
-        <maven>3.0.4</maven>
+        <maven>3.2.3</maven>
     </prerequisites>
     <organization>
         <name>Rutebanken</name>
@@ -232,14 +237,14 @@
                                     </excludes>
                                 </bannedDependencies>
                                 <requireMavenVersion>
-                                    <version>3.0.4</version>
+                                    <version>3.2.3</version>
                                 </requireMavenVersion>
                                 <requireJavaVersion>
                                     <version>1.7</version>
                                 </requireJavaVersion>
                                 <!-- To be introduced later: need to be introduced carefully as it breaks
                                      a lot of projects
-                                     <DependencyConvergence /> -->
+                                     <DependencyConvergence />-->
                             </rules>
                         </configuration>
                         <goals>
