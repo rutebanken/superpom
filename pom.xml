@@ -26,7 +26,7 @@
         <plexus.compiler.javac.version>2.7</plexus.compiler.javac.version>
 
         <!-- ============= project dependencies to supply default values ========== -->
-        <fabric8.version>2.2.96</fabric8.version>
+        <fabric8.version>2.2.101</fabric8.version>
     </properties>
 
     <profiles>
