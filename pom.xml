@@ -18,6 +18,7 @@
                  is in order to avoid sub projects to be built on the same level as the main
                  project === -->
         <site.name>${project.name}</site.name>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <asciidoctor.version>1.5.3</asciidoctor.version>
         <maven.compiler.plugin.version>3.5.1</maven.compiler.plugin.version>
         <maven.shade.plugin.version>2.4.3</maven.shade.plugin.version>
