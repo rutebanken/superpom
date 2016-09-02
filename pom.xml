@@ -8,10 +8,9 @@
     <name>superpom</name>
     <description>Super pom for rutebanken</description>
     <scm>
-        <connection>scm:git:ssh://git@bitbucket.org/rutebanken/superpom.git</connection>
-        <developerConnection>scm:git:ssh://git@bitbucket.org/rutebanken/superpom.git</developerConnection>
-      <tag>HEAD</tag>
-  </scm>
+        <connection>scm:git:ssh://git@github.com/rutebanken/superpom.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/rutebanken/superpom.git</developerConnection>
+    </scm>
 
     <properties>
         <!-- === Default site name, needs to be overridden to empty in all sub projects. This
@@ -376,6 +375,10 @@
             <name>Rutebanken Repository</name>
             <url>scpexe://nexus/opt/mavenrepo</url>
         </repository>
+        <snapshotRepository>
+            <id>Nexus</id>
+            <url>http://nexus.rutebanken.org/content/repositories/snapshots</url>
+        </snapshotRepository>
     </distributionManagement>
 
     <reporting>
