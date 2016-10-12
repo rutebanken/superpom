@@ -374,7 +374,7 @@
         <repository>
             <id>rutebanken-repository</id>
             <name>Rutebanken Repository</name>
-            <url>scpexe://localhost:2223/opt/mavenrepo</url>
+            <url>scpexe://localhost:2223/</url>
         </repository>
         <snapshotRepository>
             <id>Nexus</id>
