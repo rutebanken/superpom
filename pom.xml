@@ -3,14 +3,14 @@
     <groupId>org.rutebanken.superpom</groupId>
     <artifactId>superpom</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.7-SNAPSHOT</version>
+    <version>0.0.6</version>
 
     <name>superpom</name>
     <description>Super pom for rutebanken</description>
     <scm>
         <connection>scm:git:ssh://git@github.com/rutebanken/superpom.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/rutebanken/superpom.git</developerConnection>
-      <tag>HEAD</tag>
+      <tag>superpom-0.0.6</tag>
   </scm>
 
     <properties>
