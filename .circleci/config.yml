@@ -1,0 +1,18 @@
+version: 2
+jobs:
+    deploy-artifactory:
+    - run: mvn deploy -s /tools/m2/settings.xml -DskipTests
+    docker:
+    - image: eu.gcr.io/carbon-1287/circleci-toolbox-image
+      auth:
+        username: _json_key
+        password: $GCLOUD_SERVICE_KEY
+workflows:
+  version: 2
+  build_deploy:
+    jobs:
+    - deploy-artifactory:
+        context: org-carbon
+        filters:
+          branches:
+            only: master
