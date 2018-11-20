@@ -30,13 +30,7 @@
         <!-- ============= project dependencies to supply default values ========== -->
         <fabric8.version>2.2.101</fabric8.version>
     </properties>
-    <distributionManagement>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <name>entur2-snapshots</name>
-            <url>https://entur2.jfrog.io/entur2/libs-snapshot-local</url>
-        </snapshotRepository>
-    </distributionManagement>
+
     <profiles>
         <!-- Linting javadoc when building with java-8 breaks a lot of doc -->
         <!-- http://stackoverflow.com/questions/15886209/maven-is-not-working-in-java-8-when-javadoc-tags-are-incomplete -->
@@ -393,6 +387,11 @@
             <name>entur2-releases</name>
             <url>https://entur2.jfrog.io/entur2/libs-release-local</url>
         </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>entur2-snapshots</name>
+            <url>https://entur2.jfrog.io/entur2/libs-snapshot-local</url>
+        </snapshotRepository>
     </distributionManagement>
     <reporting>
         <plugins>
