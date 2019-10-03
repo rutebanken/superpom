@@ -154,8 +154,7 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <configuration>
                         <fork>true</fork>
-                        <source>${jdk.version}</source>
-                        <target>${jdk.version}</target>
+                        <release>${jdk.version}</release>
                         <compilerArgs>
                             <arg>-J-Xss4m</arg>
                             <arg>-Xlint:all</arg>
