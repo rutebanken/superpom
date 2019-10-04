@@ -10,7 +10,7 @@
     <groupId>org.rutebanken.superpom</groupId>
     <artifactId>superpom</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.9-SNAPSHOT</version>
+    <version>0.0.10-SNAPSHOT</version>
 
     <name>superpom</name>
     <description>Super pom for routes and journey planning components</description>
@@ -43,6 +43,8 @@
         <!-- should be removed when transitive dependencies are fixed -->
         <commons-compress.version>1.19</commons-compress.version>
         <jackson-bom.version>2.9.10</jackson-bom.version>
+
+        <prometheus.agent.version>0.12.0</prometheus.agent.version>
 
     </properties>
 
@@ -303,6 +305,33 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-prometheus-agent</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>io.prometheus.jmx</groupId>
+                                    <artifactId>jmx_prometheus_javaagent</artifactId>
+                                    <version>${prometheus.agent.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}/prometheus-agent</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 
