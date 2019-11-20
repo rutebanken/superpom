@@ -4,13 +4,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.9.RELEASE</version>
+        <version>2.1.10.RELEASE</version>
     </parent>
 
     <groupId>org.rutebanken.superpom</groupId>
     <artifactId>superpom</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.10-SNAPSHOT</version>
+    <version>0.0.11-SNAPSHOT</version>
 
     <name>superpom</name>
     <description>Super pom for routes and journey planning components</description>
@@ -33,10 +33,13 @@
 
         <logstash.version>5.2</logstash.version>
 
+        <!-- Downloading PubSub emulator is disabled by default-->
+        <entur.google.pubsub.emulator.download.skip>true</entur.google.pubsub.emulator.download.skip>
+
+
         <!-- temporary security-related dependency management -->
         <!-- should be removed when transitive dependencies are fixed -->
         <commons-compress.version>1.19</commons-compress.version>
-        <jackson-bom.version>2.9.10</jackson-bom.version>
 
     </properties>
 
@@ -52,17 +55,6 @@
                 <groupId>net.logstash.logback</groupId>
                 <artifactId>logstash-logback-encoder</artifactId>
                 <version>${logstash.version}</version>
-            </dependency>
-
-
-            <!-- temporary security-related dependency management -->
-            <!-- for spring boot -->
-            <dependency>
-                <groupId>com.fasterxml.jackson</groupId>
-                <artifactId>jackson-bom</artifactId>
-                <version>${jackson-bom.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
             </dependency>
 
             <!-- temporary security-related dependency management -->
@@ -239,6 +231,32 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-pubsub-emulator</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <skip>${entur.google.pubsub.emulator.download.skip}</skip>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.google.cloud</groupId>
+                                    <artifactId>pubsub-emulator</artifactId>
+                                    <version>0.1-SNAPSHOT</version>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}/pubsub-emulator</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 
         </plugins>
     </build>
@@ -287,44 +305,6 @@
                     </reportSet>
                 </reportSets>
 
-            </plugin>
-
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>taglist-maven-plugin</artifactId>
-                <version>2.4</version>
-                <configuration>
-                    <tags>
-                        <tag>TODO</tag>
-                        <tag>FIXME</tag>
-                        <tag>LATER</tag>
-                        <tag>XXX</tag>
-                        <tag>@todo</tag>
-                        <tag>@deprecated</tag>
-                    </tags>
-                </configuration>
-            </plugin>
-
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>3.0.0</version>
-                <configuration>
-                    <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
-                    <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
-                </configuration>
-                <!-- simpler configuration without reportSets available for usual cases -->
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>dependencies</report>
-                            <report>scm</report>
-                            <report>index</report>
-                            <report>modules</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
             </plugin>
 
         </plugins>
