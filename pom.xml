@@ -4,13 +4,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.12.RELEASE</version>
+        <version>2.2.4.RELEASE</version>
     </parent>
 
     <groupId>org.rutebanken.superpom</groupId>
     <artifactId>superpom</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.13-SNAPSHOT</version>
+    <version>0.0.14-SNAPSHOT</version>
 
     <name>superpom</name>
     <description>Super pom for routes and journey planning components</description>
