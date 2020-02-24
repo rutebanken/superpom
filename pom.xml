@@ -10,7 +10,7 @@
     <groupId>org.rutebanken.superpom</groupId>
     <artifactId>superpom</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.14-SNAPSHOT</version>
+    <version>0.0.15-SNAPSHOT</version>
 
     <name>superpom</name>
     <description>Super pom for routes and journey planning components</description>
@@ -40,6 +40,10 @@
         <!-- temporary security-related dependency management -->
         <!-- should be removed when transitive dependencies are fixed -->
         <commons-compress.version>1.19</commons-compress.version>
+
+        <!-- temporary security-related dependency management -->
+        <!-- should be removed when transitive dependencies are fixed -->
+        <spring-security.version>5.2.2.RELEASE</spring-security.version>
 
     </properties>
 
