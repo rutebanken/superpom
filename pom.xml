@@ -4,13 +4,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.4.RELEASE</version>
+        <version>2.2.5.RELEASE</version>
     </parent>
 
     <groupId>org.rutebanken.superpom</groupId>
     <artifactId>superpom</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.15-SNAPSHOT</version>
+    <version>1.0.1</version>
 
     <name>superpom</name>
     <description>Super pom for routes and journey planning components</description>
@@ -29,21 +29,12 @@
         <jacoco-maven-plugin.version>0.8.3</jacoco-maven-plugin.version>
         <!-- overrides version 3.0.0-M2 defined in spring Boot BOM which does not detect inherited plugin versions -->
         <maven-enforcer-plugin.version>1.4.1</maven-enforcer-plugin.version>
-        <owasp-dependency-check-plugin.version>5.2.2</owasp-dependency-check-plugin.version>
+        <owasp-dependency-check-plugin.version>5.3.0</owasp-dependency-check-plugin.version>
 
         <logstash.version>5.2</logstash.version>
 
         <!-- Downloading PubSub emulator is disabled by default-->
         <entur.google.pubsub.emulator.download.skip>true</entur.google.pubsub.emulator.download.skip>
-
-
-        <!-- temporary security-related dependency management -->
-        <!-- should be removed when transitive dependencies are fixed -->
-        <commons-compress.version>1.19</commons-compress.version>
-
-        <!-- temporary security-related dependency management -->
-        <!-- should be removed when transitive dependencies are fixed -->
-        <spring-security.version>5.2.2.RELEASE</spring-security.version>
 
     </properties>
 
@@ -59,14 +50,6 @@
                 <groupId>net.logstash.logback</groupId>
                 <artifactId>logstash-logback-encoder</artifactId>
                 <version>${logstash.version}</version>
-            </dependency>
-
-            <!-- temporary security-related dependency management -->
-            <!-- for spring-boot-loader-tools -->
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-compress</artifactId>
-                <version>${commons-compress.version}</version>
             </dependency>
 
         </dependencies>
@@ -138,6 +121,14 @@
                     <groupId>org.owasp</groupId>
                     <artifactId>dependency-check-maven</artifactId>
                     <version>${owasp-dependency-check-plugin.version}</version>
+                    <configuration>
+                        <failBuildOnCVSS>7</failBuildOnCVSS>
+                        <failOnError>false</failOnError>
+                        <assemblyAnalyzerEnabled>false</assemblyAnalyzerEnabled>
+                        <suppressionFiles>
+                            <suppressionFile>dependencycheck-suppression.xml</suppressionFile>
+                        </suppressionFiles>
+                    </configuration>
                  </plugin>
 
             </plugins>
@@ -251,10 +242,11 @@
                                 <artifactItem>
                                     <groupId>com.google.cloud</groupId>
                                     <artifactId>pubsub-emulator</artifactId>
-                                    <version>0.1-SNAPSHOT</version>
+                                    <version>1.51.0-sdk-268</version>
                                     <type>jar</type>
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.build.directory}/pubsub-emulator</outputDirectory>
+                                    <destFileName>pubsub-emulator.jar</destFileName>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
