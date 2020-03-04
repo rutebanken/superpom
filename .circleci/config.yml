@@ -7,9 +7,8 @@ jobs:
         username: _json_key
         password: $DOCKER_PASSWORD
     steps:
-    - add_ssh_keys:
-        fingerprints:
-          - "93:21:23:57:a1:3a:ba:64:68:49:f2:9a:d2:58:19:d1"
+    - run: git config --global user.email "circleci@entur.no"
+    - run: git config --global user.name "circleci"
     - checkout
     - run: mvn release:prepare -B -s /tools/m2/settings.xml
     - run: mvn release:perform -B -s /tools/m2/settings.xml
