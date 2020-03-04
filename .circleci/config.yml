@@ -7,8 +7,12 @@ jobs:
         username: _json_key
         password: $DOCKER_PASSWORD
     steps:
+    - run: git config --global user.email "circleci@entur.no"
+    - run: git config --global user.name "circleci"
     - checkout
-    - run: mvn deploy -s /tools/m2/settings.xml -DskipTests
+    - run: mvn release:prepare -B -s /tools/m2/settings.xml
+    - run: mvn release:perform -B -s /tools/m2/settings.xml
+
 workflows:
   version: 2
   build_deploy:
