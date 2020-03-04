@@ -8,8 +8,8 @@ jobs:
         password: $DOCKER_PASSWORD
     steps:
     - add_ssh_keys:
-      fingerprints:
-      - "fd:67:09:2a:3f:a1:33:e0:22:55:e1:ed:f1:7a:d3:87"
+        fingerprints:
+          - "fd:67:09:2a:3f:a1:33:e0:22:55:e1:ed:f1:7a:d3:87"
     - checkout
     - run: mvn release:prepare -s /tools/m2/settings.xml
     - run: mvn release:perform -s /tools/m2/settings.xml
