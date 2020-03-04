@@ -7,14 +7,19 @@ jobs:
         username: _json_key
         password: $DOCKER_PASSWORD
     steps:
+    - add_ssh_keys:
+      fingerprints:
+      - "fd:67:09:2a:3f:a1:33:e0:22:55:e1:ed:f1:7a:d3:87"
     - checkout
-    - run: mvn deploy -s /tools/m2/settings.xml -DskipTests
+    - run: mvn release:prepare -s /tools/m2/settings.xml
+    - run: mvn release:perform -s /tools/m2/settings.xml
+
 workflows:
   version: 2
   build_deploy:
     jobs:
     - deploy-artifactory:
         context: org-carbon
-        filters:
-          branches:
-            only: master
+        #filters:
+        #  branches:
+        #    only: master
