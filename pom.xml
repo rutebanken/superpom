@@ -10,14 +10,14 @@
     <groupId>org.rutebanken.superpom</groupId>
     <artifactId>superpom</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.2</version>
+    <version>1.0.3-SNAPSHOT</version>
 
     <name>superpom</name>
     <description>Super pom for routes and journey planning components</description>
     <scm>
         <connection>scm:git:ssh://git@github.com/entur/superpom.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/entur/superpom.git</developerConnection>
-      <tag>superpom-1.0.2</tag>
+      <tag>HEAD</tag>
     </scm>
 
     <properties>
