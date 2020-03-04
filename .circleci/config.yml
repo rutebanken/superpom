@@ -19,6 +19,6 @@ workflows:
     jobs:
     - deploy-artifactory:
         context: org-carbon
-        #filters:
-        #  branches:
-        #    only: master
+        filters:
+          branches:
+            only: master
