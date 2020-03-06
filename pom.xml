@@ -266,8 +266,8 @@
                         <developmentBranch>master</developmentBranch>
                     </gitFlowConfig>
                     <commitMessages>
-                        <releaseFinishMessage>[ci skip] Update for next development version</releaseFinishMessage>
-                        <releaseVersionUpdateMessage>[ci skip] Update for next development version</releaseVersionUpdateMessage>
+                        <releaseFinishMessage>Update for next development version [ci skip]</releaseFinishMessage>
+                        <releaseVersionUpdateMessage>Update for next development version [ci skip]</releaseVersionUpdateMessage>
                     </commitMessages>
                 </configuration>
             </plugin>
