@@ -10,8 +10,7 @@ jobs:
     - run: git config --global user.email "circleci@entur.no"
     - run: git config --global user.name "circleci"
     - checkout
-    - run: mvn release:prepare -B -s /tools/m2/settings.xml
-    - run: mvn release:perform -B -s /tools/m2/settings.xml
+    - run: mvn gitflow:release -B -s /tools/m2/settings.xml -DargLine='-s /tools/m2/settings.xml' -DpostReleaseGoals=deploy -DskipTestProject=true
 
 workflows:
   version: 2
