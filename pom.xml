@@ -10,7 +10,7 @@
     <groupId>org.rutebanken.superpom</groupId>
     <artifactId>superpom</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.5-SNAPSHOT</version>
+    <version>1.0.5</version>
 
     <name>superpom</name>
     <description>Super pom for routes and journey planning components</description>
