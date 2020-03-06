@@ -265,6 +265,9 @@
                         <productionBranch>master</productionBranch>
                         <developmentBranch>master</developmentBranch>
                     </gitFlowConfig>
+                    <commitMessages>
+                        <releaseVersionUpdateMessage>[ci skip] Update for next development version</releaseVersionUpdateMessage>
+                    </commitMessages>
                 </configuration>
             </plugin>
 
