@@ -53,10 +53,10 @@
 
         <!-- overrides version 3.0.0-M2 defined in spring Boot BOM which does not detect inherited plugin versions -->
         <maven-enforcer-plugin.version>1.4.1</maven-enforcer-plugin.version>
-        <owasp-dependency-check-plugin.version>5.3.0</owasp-dependency-check-plugin.version>
+        <owasp-dependency-check-plugin.version>6.0.1</owasp-dependency-check-plugin.version>
         <gitflow-maven-plugin.version>1.14.0</gitflow-maven-plugin.version>
 
-        <logstash.version>5.2</logstash.version>
+        <logstash.version>6.4</logstash.version>
 
         <!-- Downloading PubSub emulator is disabled by default-->
         <entur.google.pubsub.emulator.download.skip>true</entur.google.pubsub.emulator.download.skip>
