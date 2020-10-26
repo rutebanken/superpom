@@ -57,6 +57,7 @@
         <gitflow-maven-plugin.version>1.14.0</gitflow-maven-plugin.version>
 
         <logstash.version>6.4</logstash.version>
+        <guava.version>30.0-jre</guava.version>
 
         <!-- Downloading PubSub emulator is disabled by default-->
         <entur.google.pubsub.emulator.download.skip>true</entur.google.pubsub.emulator.download.skip>
@@ -71,6 +72,14 @@
                 <artifactId>logstash-logback-encoder</artifactId>
                 <version>${logstash.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+
 
         </dependencies>
 
